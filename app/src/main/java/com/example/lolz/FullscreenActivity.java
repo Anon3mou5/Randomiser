@@ -26,10 +26,12 @@ public class FullscreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
-        txt = (TextView) findViewById(R.id.textView);
+        txt = findViewById(R.id.textView);
         b = findViewById(R.id.button);
         s = findViewById(R.id.seekBar);
         txt2 = findViewById(R.id.textView2);
+        txt2.setVisibility(View.VISIBLE);
+        txt2.setText("" + maxi);
 
 
 
@@ -53,7 +55,7 @@ public class FullscreenActivity extends AppCompatActivity {
         s.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                maxi = (int)(progress*5);
+                maxi = progress * 1;
                 txt2.setVisibility(View.VISIBLE);
                 txt2.setText(""+maxi);
             }
